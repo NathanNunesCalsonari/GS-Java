@@ -11,7 +11,7 @@
 
 ## Vídeo do funcionamento do projeto
 
-https://www.youtube.com/watch?v=--p1kaKXmak
+[https://www.youtube.com/watch?v=--p1kaKXmak](https://www.youtube.com/watch?v=sr7Z_mlDJ3I)
 
 ## Link do site na nuvem
 
