@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Dispositivo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Detalhes do Dispositivo</h1>
+</header>
+<main class="container">
+    <div class="main-content">
+        <p>ID: <span th:text="${device.id}"></span></p>
+        <p>Nome do Dispositivo: <span th:text="${device.name}"></span></p>
+        <p>Tipo: <span th:text="${device.type}"></span></p>
+        <p>Sensor: <span th:text="${device.sensor.nome}"></span></p> <!-- Exibindo o nome do sensor -->
+
+        <a class="btn btn-cancel" href="/devices/listar">Voltar à Lista</a>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Lista de Dispositivos</p>
+</footer>
+</body>
+</html>

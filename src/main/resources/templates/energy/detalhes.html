@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalhes do Registro</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Detalhes do Registro</h1>
+</header>
+<main class="container">
+    <div class="main-content">
+        <p>ID: <span th:text="${record.id}"></span></p>
+        <p>Mês e Ano: <span th:text="${record.month}"></span></p>
+        <p>Energia Consumida: <span th:text="${record.energyConsumed}"></span> kWh</p>
+        <p>ID do Dispositivo: <span th:text="${record.deviceId}"></span></p>
+        <a class="btn btn-cancel" href="/energy/listar">Voltar à Lista</a>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Gestão de Consumo</p>
+</footer>
+</body>
+</html>

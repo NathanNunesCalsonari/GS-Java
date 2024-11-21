@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Deleção</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<header>
+    <h1>Deletar Sensor</h1>
+</header>
+
+<body>
+<div class="container">
+    <h1>Tem certeza que deseja deletar o sensor <span th:text="${sensor.nome}"></span>?</h1>
+    <form th:action="@{/sensors/deletar/{id}(id=${sensor.id})}" method="post">
+        <button type="submit" class="btn btn-danger">Sim</button>
+    </form>
+    <a href="/sensors/listar" class="btn btn-cancel">Cancelar</a>
+</div>
+<footer>
+    <p>&copy; 2024 Nexus Systems</p>
+</footer>
+</body>
+</html>

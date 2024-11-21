@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Registros de Consumo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Lista de Registros de Consumo</h1>
+    <div class="btn-group">
+        <a href="/home" class="btn">Voltar para Home</a>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="btn-group">
+        <a href="/energy/cadastrar" class="btn">Cadastrar Novo Registro</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data e Hora</th>
+            <th>Energia Consumida (kWh)</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record : ${records}">
+            <td th:text="${record.id}"></td>
+            <td th:text="${record.month}"></td>
+            <td th:text="${record.energyConsumed}"></td>
+            <td>
+                <a th:href="@{/energy/{id}(id=${record.id})}" class="btn">Detalhes</a>
+                <a th:href="@{/energy/editar/{id}(id=${record.id})}" class="btn">Editar</a>
+                <a th:href="@{/energy/deletar/{id}(id=${record.id})}" class="btn btn-danger">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2024 Gestão de Consumo</p>
+</footer>
+</body>
+</html>

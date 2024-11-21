@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Dispositivo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Editar Dispositivo</h1>
+    <div class="btn-group">
+        <a href="/devices/listar" class="btn">Voltar para Lista</a>
+    </div>
+</header>
+
+<div class="container">
+    <!-- Corrigido th:action para o link de edição do dispositivo -->
+    <form th:action="@{/devices/editar/{id}(id=${deviceDTO.id})}" th:object="${deviceDTO}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <div>
+            <label for="name">Nome do Dispositivo:</label>
+            <input type="text" id="name" th:field="*{name}" required />
+        </div>
+
+        <div>
+            <label for="type">Tipo:</label>
+            <input type="text" id="type" th:field="*{type}" required />
+        </div>
+
+        <!-- Campo de seleção de sensor com ajuste para usar o valor correto -->
+        <div>
+            <label for="sensor">Sensor:</label>
+            <select id="sensor" th:field="*{sensor.id}">
+                <option th:each="sensor : ${sensors}"
+                        th:value="${sensor.id}"
+                        th:text="${sensor.nome}"
+                        th:selected="${sensor.id == deviceDTO.sensor.id}"></option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit">Atualizar Dispositivo</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Lista de Dispositivos</p>
+</footer>
+</body>
+</html>

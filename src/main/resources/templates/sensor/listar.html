@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Sensores</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Lista de Sensores</h1>
+    <div class="btn-group">
+        <a th:href="@{/home}" class="btn">Voltar para Home</a>
+        <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+    </div>
+</header>
+<div class="container">
+    <div class="btn-group">
+        <a th:href="@{/sensors/cadastrar}" class="btn">Cadastrar Novo Sensor</a>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome do Sensor</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sensor : ${sensors}">
+            <td th:text="${sensor.id}"></td>
+            <td th:text="${sensor.nome}"></td>
+            <td th:text="${sensor.type}"></td>
+            <td>
+                <a th:href="@{/sensors/{id}(id=${sensor.id})}" class="btn">Detalhes</a>
+                <a th:href="@{/sensors/editar/{id}(id=${sensor.id})}" class="btn">Editar</a>
+                <a th:href="@{/sensors/deletar/{id}(id=${sensor.id})}" class="btn btn-delete">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer>
+    <p>&copy; 2024 Nexus Systems</p>
+</footer>
+</body>
+</html>

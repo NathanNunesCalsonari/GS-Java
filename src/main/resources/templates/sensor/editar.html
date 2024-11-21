@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Sensor</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Editar Sensor</h1>
+    <div class="btn-group">
+        <a href="/sensors/listar" class="btn">Voltar para Lista</a>
+    </div>
+</header>
+
+<div class="container">
+    <form th:action="@{/sensors/editar/{id}(id=${sensorDTO.id})}" th:object="${sensorDTO}" method="post">
+        <div>
+            <label for="nome">Nome do Sensor:</label>
+            <input type="text" id="nome" th:field="*{nome}" required>
+        </div>
+        <div>
+            <label for="type">Tipo:</label>
+            <input type="text" id="type" th:field="*{type}" required>
+        </div>
+        <div>
+            <button type="submit">Atualizar Sensor</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Nexus Systems</p>
+</footer>
+</body>
+</html>

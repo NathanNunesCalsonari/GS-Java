@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DataTech</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header>
+    <h1>Nexus</h1>
+</header>
+
+<main class="container">
+    <div class="form-container">
+        <div class="form-section" id="login-section">
+            <h2>Login</h2>
+            <form th:action="@{/req/login}" method="post">
+                <div>
+                    <label>Username:</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <div>
+                <p>Ainda não tem uma conta? <a href="/req/signup" class="btn">Registre-se aqui</a></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Nexus Systems</p>
+</footer>
+
+</body>
+</html>

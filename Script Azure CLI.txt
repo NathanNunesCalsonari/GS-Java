@@ -1,0 +1,20 @@
+# Variáveis do Script
+rg=Nexus  # Grupo de recursos
+location=brazilsouth  # Região
+appServicePlanName=plan-nexus  # Plano de serviço do App
+webAppName=app-nexus-552539  # Nome do aplicativo
+sku=F1  # SKU do plano de serviço (Gratuito)
+dbServerName=dbNexusServer  # Nome do servidor SQL
+dbName=NexusDB  # Nome do banco de dados
+adminUser=nexusadmin  # Usuário administrador do banco de dados
+adminPassword=SenhaSuperForte#2024  # Senha do administrador
+# Cria um novo Grupo de Recursos
+az group create --name $rg --location $location
+# Cria um novo Plano de Serviço para o App
+az appservice plan create -n $appServicePlanName --location $location -g $rg --sku $sku
+# Cria um novo Serviço de Aplicativo com Java SE 17 (Embedded Web Server)
+az webapp create -g $rg -p $appServicePlanName --runtime "JAVA|17" -n $webAppName
+# Cria o Servidor SQL
+az sql server create --name $dbServerName --resource-group $rg --location $location --admin-user $adminUser --admin-password $adminPassword
+# Cria o Banco de Dados SQL com o SKU correto
+az sql db create --resource-group $rg --server $dbServerName --name $dbName --service-objective S1

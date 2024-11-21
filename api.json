@@ -1,0 +1,84 @@
+--JSON USUARIO--
+{
+  "id": 1,
+  "username": "testUser",
+  "password": "encryptedPassword123",
+  "email": "testuser@example.com"
+}
+
+--JSON EMAIL--
+{
+  "emailId": "a7f0de78-5b5f-47cd-b66e-81975a34b5cd",
+  "ownerRef": "device123",
+  "emailFrom": "noreply@example.com",
+  "emailTo": "user@example.com",
+  "subject": "Device Alert",
+  "text": "Your device has triggered an alert due to high temperature.",
+  "sendDateEmail": "2024-11-20T15:30:00",
+  "statusEmail": "SENT"
+}
+
+--JSON SENSOR--
+{
+  "id": 1,
+  "type": "Temperature",
+  "nome": "Sensor 1",
+  "devices": [
+    {
+      "id": 1,
+      "name": "Device 1",
+      "type": "Sensor Type A",
+      "sensor": {
+        "id": 1,
+        "type": "Temperature",
+        "nome": "Sensor 1"
+      }
+    }
+  ]
+}
+
+--JSON DEVICE--
+{
+  "id": 1,
+  "name": "Device 1",
+  "type": "Sensor Type A",
+  "sensor": {
+    "id": 1,
+    "type": "Temperature",
+    "nome": "Sensor 1"
+  },
+  "energyUsageRecords": [
+    {
+      "id": 1,
+      "month": "2024-10",
+      "energyConsumed": 120.5,
+      "device": {
+        "id": 1,
+        "name": "Device 1",
+        "type": "Sensor Type A",
+        "sensor": {
+          "id": 1,
+          "type": "Temperature",
+          "nome": "Sensor 1"
+        }
+      }
+    }
+  ]
+}
+
+--JSON ENERGY USAGE RECORD--
+{
+  "id": 1,
+  "month": "2024-10",
+  "energyConsumed": 120.5,
+  "device": {
+    "id": 1,
+    "name": "Device 1",
+    "type": "Sensor Type A",
+    "sensor": {
+      "id": 1,
+      "type": "Temperature",
+      "nome": "Sensor 1"
+    }
+  }
+}

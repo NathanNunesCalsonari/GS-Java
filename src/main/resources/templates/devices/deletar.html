@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Deleção</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<header>
+    <h1>Deletar Dispositivo</h1>
+</header>
+
+<body>
+<div class="container">
+    <h1>Tem certeza que deseja deletar o dispositivo <span th:text="${device.name}"></span>?</h1>
+    <form th:action="@{/devices/deletar/{id}(id=${device.id})}" method="post">
+        <button type="submit" class="btn btn-danger">Sim</button>
+    </form>
+    <a href="/devices/listar" class="btn btn-cancel">Cancelar</a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Lista de Dispositivos</p>
+</footer>
+</body>
+</html>

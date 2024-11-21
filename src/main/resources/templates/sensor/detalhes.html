@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalhes do Sensor</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Detalhes do Sensor</h1>
+</header>
+<main class="container">
+    <div class="main-content">
+        <p>ID: <span th:text="${sensor.id}"></span></p>
+        <p>Nome do Sensor: <span th:text="${sensor.nome}"></span></p>
+        <p>Tipo: <span th:text="${sensor.type}"></span></p>
+        <a class="btn btn-cancel" href="/sensors/listar">Voltar à Lista</a>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Nexus Systems</p>
+</footer>
+</body>
+</html>

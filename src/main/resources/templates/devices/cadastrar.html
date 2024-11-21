@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Dispositivo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Cadastrar Novo Dispositivo</h1>
+</header>
+
+<div class="form-container">
+    <form th:action="@{/devices/cadastrar}" th:object="${deviceDTO}" method="post">
+
+        <input type="hidden" th:field="*{id}" />
+
+        <label for="name">Nome do Dispositivo:</label>
+        <input type="text" id="name" th:field="*{name}" required /><br/>
+
+        <label for="type">Tipo:</label>
+        <input type="text" id="type" th:field="*{type}" required /><br/>
+
+        <!-- Novo campo para selecionar sensor -->
+        <label for="sensor">Sensor:</label>
+        <select id="sensor" th:field="*{sensor.id}">
+            <option value="" disabled selected>Selecione um sensor</option>
+            <option th:each="sensor : ${sensors}" th:value="${sensor.id}" th:text="${sensor.nome}"></option>
+        </select><br/>
+
+        <button type="submit">Salvar</button>
+    </form>
+    <br>
+    <a href="/devices/listar" class="btn btn-cancel">Voltar para a Lista</a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Lista de Dispositivos</p>
+</footer>
+</body>
+</html>

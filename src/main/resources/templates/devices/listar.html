@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Dispositivos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Dispositivos Disponíveis</h1>
+    <div class="btn-group">
+        <a href="/home" class="btn">Voltar para Home</a>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="btn-group">
+        <a href="/devices/cadastrar" class="btn">Cadastrar Novo Dispositivo</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome do Dispositivo</th>
+            <th>Tipo</th>
+            <th>Sensor</th> <!-- Coluna para o sensor -->
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="device : ${devices}">
+            <td th:text="${device.id}"></td>
+            <td th:text="${device.name}"></td>
+            <td th:text="${device.type}"></td>
+            <td th:text="${device.sensor.nome}"></td> <!-- Exibindo o nome do sensor -->
+            <td>
+                <a th:href="@{/devices/{id}(id=${device.id})}" class="btn">Detalhes</a> |
+                <a th:href="@{/devices/editar/{id}(id=${device.id})}" class="btn">Editar</a> |
+                <a th:href="@{/devices/deletar/{id}(id=${device.id})}" class="btn btn-delete">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2024 Lista de Dispositivos</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+/* Estilo geral */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0b172a; /* Fundo azul escuro */
+    color: #d7f9ff; /* Texto em azul claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff, #34d399); /* Gradiente de branco para verde */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: rgba(10, 50, 60, 0.9); /* Fundo azul esverdeado */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #34d399; /* Verde vibrante */
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #a8ffeb; /* Texto verde claro */
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+header .btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Estilo do container */
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    background-color: rgba(15, 35, 45, 0.95); /* Fundo azul escuro */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: rgba(20, 50, 60, 0.9);
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #34d399; /* Verde vibrante */
+    color: #ffffff;
+}
+
+td {
+    background-color: rgba(25, 60, 70, 0.9); /* Fundo azul esverdeado */
+}
+
+/* Estilo dos botões */
+.btn {
+    background-color: #34d399; /* Verde vibrante */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #028a78; /* Verde mais escuro */
+    transform: scale(1.05);
+}
+
+.btn-danger {
+    background-color: #10b981; /* Verde moderado */
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.btn-danger:hover {
+    background-color: #059669;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: rgba(10, 50, 60, 0.9);
+    color: #a8ffeb;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Estilo do container do formulário */
+.form-container {
+    background-color: #023c40; /* Verde escuro */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Estilo do formulário */
+form label {
+    color: #d7f9ff;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #233f4d;
+    color: #a8ffeb;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #34d399; /* Verde vibrante */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #028a78;
+}
+
+/* Rodapé fixo */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo para animação de entrada */
+.container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Keyframes para animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
