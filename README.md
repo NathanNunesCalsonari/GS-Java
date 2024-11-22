@@ -15,7 +15,7 @@
 
 ## Link do site na nuvem
 
-https://app-nexus-552539.azurewebsites.net/home
+[https://app-nexus-552539.azurewebsites.net/home](https://app-nexus-552539.azurewebsites.net/req/login?logout=true)
 
 ## Arquitetura de solução
 
